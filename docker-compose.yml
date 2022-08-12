@@ -1,0 +1,49 @@
+version: '3'
+
+# Creates as many nodes (containers) you want
+# Just copy a node's config and paste it below, then change the container's name and file directory name
+services:
+   node1:
+      # builds the container with the dockerfile in the same directory (.)
+      build: .
+      # runs the python file to start networking
+      command: python3 ./main.py
+      # opens a specific port to allow communication only within the docker network (not outside to the host's computer)
+      expose:
+         - 65434
+      # bind mounts to a host's file directory and allows the container add/delete files in that directory
+      # it also creates a "/files" directory in the container that points to the host's file directory
+      volumes:
+         - ./node1:/files
+
+   node2:
+      build: .
+      command: python3 ./main.py
+      expose:
+         - 65434
+      volumes:
+         - ./node2:/files
+
+   node3:
+      build: .
+      command: python3 ./main.py
+      expose:
+         - 65434
+      volumes:
+         - ./node3:/files
+
+   node4:
+      build: .
+      command: python3 ./main.py
+      expose:
+         - 65434
+      volumes:
+         - ./node4:/files
+
+# change the default network to my own network with a specific subnet of /24
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24
+          gateway: 192.168.0.1

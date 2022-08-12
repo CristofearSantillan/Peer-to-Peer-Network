@@ -1,0 +1,26 @@
+1. A three-teired client-server architecture is where each application layering (interface, processing, and data) are independent servers.
+   Each application layer will receive a request and request the next layer server for information. Then eventually the information will arrive back to the client by passing infromation to each layer server.
+
+2. Vertical distribution is distributing logical different components in a multiteired architecture across many machines.
+   Horizontal distribution is physically distributing a client or server into logical parts in a single layer.
+
+3. We can tackle this problem by breaking the client's task into smaller pieces so that one piece could handle the respond from the server and the client could do something else in the meantime.
+
+4. The main problem with this is if n is a large number then a P has to wait for other Ps to finish there process.
+   Another problem is if a machine between Ps is failing then the performance will degrade.
+
+5. The disadvantage of this approach is the logical path that two node communicate on.
+   The logical path assumes that the nodes are together but the physical structure shows otherwise.
+   So as a result, there can be physical path that is shorter than the logical path.
+
+6. If there is N nodes in the network and each node chooses c randomly then the probablity of P and Q being neighbors is 2c/(N-1).
+
+7. Some requirements for a superpeer to meet are high availability, long-lived, and high CPU capacity to handle requests.
+
+8. A self-managed system that its analysis component is hidden is a unstructured peer-to-peer systems.
+   Because each node maintains a list of neighbors and exchange that information among other nodes and new node that connect.
+   Then they can remove nodes or links that become inactive and have another slot for another node.
+
+9. The maximum download capacity of a BitTorrent client is (Seeder x B_out) / Clients because of the outgoing cacpacity needs to be shared among clients.
+
+10. Some examples of feedback control systems in cars are the sensors within the engine of the car, sensor cameras around the car to tell you if you're near an object, and self driving cars.
